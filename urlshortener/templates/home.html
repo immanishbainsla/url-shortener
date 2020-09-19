@@ -1,0 +1,29 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+
+  <h1 class="display-3 text-center">Welcome to URL Shortener</h1>
+  {% if error %}
+  <div class="container shadow p-4">
+    <div class="row">
+      <div class="col-12 text-center">
+        <p>The URL you are looking for is not valid</p>
+        <a href="{% url 'dashboard' %}" class="btn btn-primary">Shorten a URL</a>
+      </div>
+    </div>
+  </div>
+  {% else %}
+    <div class="container shadow p-4">
+      <div class="row">
+        <div class="col-12 text-center">
+          <a href="{% url 'dashboard' %}" class="btn btn-primary">Shorten a URL</a>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+</body>
+
+</html>
+
+{% endblock %}
